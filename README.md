@@ -451,8 +451,6 @@ dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="sqp_0868062e4b
 
 Obs: if you need, ask me I'll share with you another Token (in sonar.password)
 
-> In PowerShell, be careful with literal passwords. When a value should not be interpreted as a variable, use single quotes, for example: 'Order3ngine'.
-
 ## 15. Troubleshooting
 
 ### Port already in use
