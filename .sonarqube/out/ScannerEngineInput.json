@@ -1,0 +1,216 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.2.1"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1787544097000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "ORDERENGINE"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\projects\\orderengine"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\projects\\orderengine"
+    },
+    {
+      "key": "sonar.sources",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Tests\\obj\\OrderEngine.Tests.csproj.nuget.dgspec.json,C:\\projects\\orderengine\\OrderEngine.Tests\\obj\\project.assets.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\appsettings.Development.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\appsettings.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\MvcTestingAppManifest.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Api.deps.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Api.runtimeconfig.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Api.staticwebassets.endpoints.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Application.deps.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Domain.deps.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Infrastructure.deps.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Tests.deps.json,C:\\projects\\orderengine\\OrderEngine.Tests\\bin\\Debug\\net10.0\\OrderEngine.Tests.runtimeconfig.json,C:\\projects\\orderengine\\OrderEngine.Tests\\obj\\Debug\\net10.0\\MvcTestingAppManifest.json,C:\\projects\\orderengine\\docker-compose.sonarqube.yml,C:\\projects\\orderengine\\docker-compose.yml,C:\\projects\\orderengine\\Dockerfile"
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44,8D961DA4-495D-4ADD-9B53-182682D78D2C,BE58E27B-708D-4A05-9BE3-AF5FC61CEC64,0AF34CB3-42F1-4A35-A552-42878D7361C4"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.projectKey",
+      "value": "ORDERENGINE:040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.projectName",
+      "value": "OrderEngine.Domain"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.projectBaseDir",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Domain"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.working.directory",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.sources",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Domain\\OrderAggregate.cs,C:\\projects\\orderengine\\OrderEngine.Domain\\obj\\OrderEngine.Domain.csproj.nuget.dgspec.json,C:\\projects\\orderengine\\OrderEngine.Domain\\obj\\project.assets.json,C:\\projects\\orderengine\\OrderEngine.Domain\\bin\\Debug\\net10.0\\OrderEngine.Domain.deps.json"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "040F15A9-1BD7-4E68-A2D0-DAF2F27D5D44.sonar.cs.scanner.telemetry",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.projectKey",
+      "value": "ORDERENGINE:8D961DA4-495D-4ADD-9B53-182682D78D2C"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.projectName",
+      "value": "OrderEngine.Application"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.projectBaseDir",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Application"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.working.directory",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\.sonar\\mod1"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.sources",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Application\\obj\\OrderEngine.Application.csproj.nuget.dgspec.json,C:\\projects\\orderengine\\OrderEngine.Application\\obj\\project.assets.json,C:\\projects\\orderengine\\OrderEngine.Application\\bin\\Debug\\net10.0\\OrderEngine.Application.deps.json,C:\\projects\\orderengine\\OrderEngine.Application\\LoggingBehavior.cs,C:\\projects\\orderengine\\OrderEngine.Application\\OrderContracts.cs,C:\\projects\\orderengine\\OrderEngine.Application\\ValidationBehavior.cs"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\1"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\1\\Issues.json"
+    },
+    {
+      "key": "8D961DA4-495D-4ADD-9B53-182682D78D2C.sonar.cs.scanner.telemetry",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\1\\Telemetry.json"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.projectKey",
+      "value": "ORDERENGINE:BE58E27B-708D-4A05-9BE3-AF5FC61CEC64"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.projectName",
+      "value": "OrderEngine.Infrastructure"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.projectBaseDir",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Infrastructure"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.working.directory",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\.sonar\\mod2"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.sources",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Infrastructure\\obj\\OrderEngine.Infrastructure.csproj.nuget.dgspec.json,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\obj\\project.assets.json,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\bin\\Debug\\net10.0\\OrderEngine.Infrastructure.deps.json,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\Class1.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\EfCoreOrderRepository.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\InMemoryOrderRepository.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\Migrations\\20260823033546_InitialCreate.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\Migrations\\20260823033546_InitialCreate.Designer.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\Migrations\\OrderDbContextModelSnapshot.cs,C:\\projects\\orderengine\\OrderEngine.Infrastructure\\OrderDbContext.cs"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\2"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\2\\Issues.json"
+    },
+    {
+      "key": "BE58E27B-708D-4A05-9BE3-AF5FC61CEC64.sonar.cs.scanner.telemetry",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\2\\Telemetry.json"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.projectKey",
+      "value": "ORDERENGINE:0AF34CB3-42F1-4A35-A552-42878D7361C4"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.projectName",
+      "value": "OrderEngine.Api"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.projectBaseDir",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Api"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.working.directory",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\.sonar\\mod3"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.sources",
+      "value": "C:\\projects\\orderengine\\OrderEngine.Api\\appsettings.Development.json,C:\\projects\\orderengine\\OrderEngine.Api\\appsettings.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\OrderEngine.Api.csproj.nuget.dgspec.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\project.assets.json,C:\\projects\\orderengine\\OrderEngine.Api\\Properties\\launchSettings.json,C:\\projects\\orderengine\\OrderEngine.Api\\bin\\Debug\\net10.0\\appsettings.Development.json,C:\\projects\\orderengine\\OrderEngine.Api\\bin\\Debug\\net10.0\\appsettings.json,C:\\projects\\orderengine\\OrderEngine.Api\\bin\\Debug\\net10.0\\OrderEngine.Api.deps.json,C:\\projects\\orderengine\\OrderEngine.Api\\bin\\Debug\\net10.0\\OrderEngine.Api.runtimeconfig.json,C:\\projects\\orderengine\\OrderEngine.Api\\bin\\Debug\\net10.0\\OrderEngine.Api.staticwebassets.endpoints.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\rjsmcshtml.dswa.cache.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\rjsmrazor.dswa.cache.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\rpswa.dswa.cache.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\staticwebassets.build.endpoints.json,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\staticwebassets.build.json,C:\\projects\\orderengine\\OrderEngine.Api\\Auth\\JwtTokenService.cs,C:\\projects\\orderengine\\OrderEngine.Api\\Endpoints\\OrderEndpoints.cs,C:\\projects\\orderengine\\OrderEngine.Api\\Extensions\\BuilderExtensions.cs,C:\\projects\\orderengine\\OrderEngine.Api\\Program.cs,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\OrderEngine.Api.GlobalUsings.g.cs,\"C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\",C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\OrderEngine.Api.AssemblyInfo.cs,C:\\projects\\orderengine\\OrderEngine.Api\\obj\\Debug\\net10.0\\OrderEngine.Api.MvcApplicationPartsAssemblyInfo.cs,C:\\projects\\orderengine\\OrderEngine.Api\\OrderEngine.Api.http,C:\\projects\\orderengine\\OrderEngine.Api\\OrderEngine.db"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\3"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\3\\Issues.json"
+    },
+    {
+      "key": "0AF34CB3-42F1-4A35-A552-42878D7361C4.sonar.cs.scanner.telemetry",
+      "value": "C:\\projects\\orderengine\\.sonarqube\\out\\3\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

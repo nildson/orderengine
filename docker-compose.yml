@@ -1,0 +1,19 @@
+services:
+  orderengine-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: orderengine-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ORDERENGINE_AUTH_EMAIL: dev@martech.com
+      ORDERENGINE_AUTH_PASSWORD: Senha@123
+      ORDERENGINE_JWT_KEY: local-dev-jwt-key-very-long-secret-value-2026
+      ORDERENGINE_JWT_ISSUER: OrderEngine
+      ORDERENGINE_JWT_AUDIENCE: OrderEngineAudience
+    ports:
+      - "5164:8080"
+    volumes:
+      - ./OrderEngine.Api/OrderEngine.db:/app/OrderEngine.db
+    restart: unless-stopped

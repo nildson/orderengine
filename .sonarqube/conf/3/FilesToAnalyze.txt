@@ -1,0 +1,13 @@
+﻿C:\projects\orderengine\OrderEngine.Api\Auth\JwtTokenService.cs
+C:\projects\orderengine\OrderEngine.Api\Endpoints\OrderEndpoints.cs
+C:\projects\orderengine\OrderEngine.Api\Extensions\BuilderExtensions.cs
+C:\projects\orderengine\OrderEngine.Api\Program.cs
+C:\projects\orderengine\OrderEngine.Api\obj\Debug\net10.0\OrderEngine.Api.GlobalUsings.g.cs
+C:\projects\orderengine\OrderEngine.Api\obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+C:\projects\orderengine\OrderEngine.Api\obj\Debug\net10.0\OrderEngine.Api.AssemblyInfo.cs
+C:\projects\orderengine\OrderEngine.Api\obj\Debug\net10.0\OrderEngine.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\projects\orderengine\OrderEngine.Api\appsettings.Development.json
+C:\projects\orderengine\OrderEngine.Api\appsettings.json
+C:\projects\orderengine\OrderEngine.Api\OrderEngine.Api.http
+C:\projects\orderengine\OrderEngine.Api\OrderEngine.db
+C:\projects\orderengine\OrderEngine.Api\Properties\launchSettings.json

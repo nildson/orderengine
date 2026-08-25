@@ -1,0 +1,7 @@
+﻿C:\projects\orderengine\OrderEngine.Infrastructure\Class1.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\EfCoreOrderRepository.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\InMemoryOrderRepository.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\Migrations\20260823033546_InitialCreate.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\Migrations\20260823033546_InitialCreate.Designer.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\Migrations\OrderDbContextModelSnapshot.cs
+C:\projects\orderengine\OrderEngine.Infrastructure\OrderDbContext.cs

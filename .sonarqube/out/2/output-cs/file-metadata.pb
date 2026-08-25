@@ -1,0 +1,11 @@
+z
+oC:\projects\orderengine\OrderEngine.Infrastructure\obj\Debug\net10.0\OrderEngine.Infrastructure.AssemblyInfo.csutf-8
+tC:\projects\orderengine\OrderEngine.Infrastructure\obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.csutf-8|
+qC:\projects\orderengine\OrderEngine.Infrastructure\obj\Debug\net10.0\OrderEngine.Infrastructure.GlobalUsings.g.csutf-8M
+DC:\projects\orderengine\OrderEngine.Infrastructure\OrderDbContext.csutf-8g
+\C:\projects\orderengine\OrderEngine.Infrastructure\Migrations\OrderDbContextModelSnapshot.csutf-8f
+]C:\projects\orderengine\OrderEngine.Infrastructure\Migrations\20260823033546_InitialCreate.csutf-8q
+fC:\projects\orderengine\OrderEngine.Infrastructure\Migrations\20260823033546_InitialCreate.Designer.csutf-8V
+MC:\projects\orderengine\OrderEngine.Infrastructure\InMemoryOrderRepository.csutf-8T
+KC:\projects\orderengine\OrderEngine.Infrastructure\EfCoreOrderRepository.csutf-8E
+<C:\projects\orderengine\OrderEngine.Infrastructure\Class1.csutf-8

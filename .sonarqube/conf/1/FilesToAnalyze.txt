@@ -1,0 +1,3 @@
+﻿C:\projects\orderengine\OrderEngine.Application\LoggingBehavior.cs
+C:\projects\orderengine\OrderEngine.Application\OrderContracts.cs
+C:\projects\orderengine\OrderEngine.Application\ValidationBehavior.cs
