@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5164",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ORDERENGINE_AUTH_EMAIL": "dev@martech.com",
+        "ORDERENGINE_AUTH_PASSWORD": "Senha@123",
+        "ORDERENGINE_JWT_KEY": "local-dev-jwt-key-very-long-secret-value-2026",
+        "ORDERENGINE_JWT_ISSUER": "OrderEngine",
+        "ORDERENGINE_JWT_AUDIENCE": "OrderEngineAudience"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7025;http://localhost:5164",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

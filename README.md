@@ -447,9 +447,11 @@ dotnet sonarscanner begin /k:"orderengine" /n:"OrderEngine" /d:sonar.host.url="h
 dotnet test OrderEngine.Tests\OrderEngine.Tests.csproj -nologo
 
 dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="sqp_0868062e4b5560b1db1ea428d897c3dca61b8ac5"
-```
 
 Obs: if you need, ask me I'll share with you another Token (in sonar.password)
+```
+
+> In PowerShell, be careful with literal passwords. When a value should not be interpreted as a variable, use single quotes, for example: `'Order3ngine'`.
 
 ## 15. Troubleshooting
 
@@ -494,3 +496,4 @@ For a technical newcomer, it demonstrates how a modern .NET backend is structure
 OrderEngine is a compact but representative backend project that combines strong engineering principles with a realistic business domain. It is easy to understand for new contributors, while still showing the patterns and practices expected in a production-oriented .NET solution.
 
 The main idea is simple: a small domain, well-defined rules, clear architecture, and a clean execution environment that supports local development, quality analysis and observability.
+

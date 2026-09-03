@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="OrderEngine.Api/OrderEngine.Api.csproj" />
+  <Project Path="OrderEngine.Application/OrderEngine.Application.csproj" />
+  <Project Path="OrderEngine.Domain/OrderEngine.Domain.csproj" />
+  <Project Path="OrderEngine.Infrastructure/OrderEngine.Infrastructure.csproj" />
+  <Project Path="OrderEngine.Tests/OrderEngine.Tests.csproj" />
+</Solution>
