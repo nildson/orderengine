@@ -15,8 +15,6 @@ public record GetOrdersQuery : IRequest<IReadOnlyCollection<Order>>;
 
 public record UpdateOrderStatusCommand(Guid Id, OrderStatus Status) : IRequest<Order>;
 
-public record UpdateOrderStatusRequest(OrderStatus Status);
-
 public interface IOrderRepository
 {
     Task<Order> AddAsync(Order order, CancellationToken cancellationToken = default);

@@ -1,5 +1,6 @@
 using MediatR;
 using OrderEngine.Application;
+using OrderEngine.Domain;
 
 namespace OrderEngine.Api.Endpoints;
 
@@ -25,11 +26,11 @@ public static class OrderEndpoints
             return Results.Created($"/api/orders/{created.Id}", created);
         }).RequireAuthorization();
 
-        app.MapPatch("/api/orders/{id:guid}/status", async (Guid id, UpdateOrderStatusRequest request, ISender mediator) =>
+        app.MapPatch("/api/orders/{id:guid}/cancel", async (Guid id, ISender mediator) =>
         {
             try
             {
-                var updated = await mediator.Send(new UpdateOrderStatusCommand(id, request.Status));
+            var updated = await mediator.Send(new UpdateOrderStatusCommand(id, OrderStatus.Cancelled));
                 return Results.Ok(updated);
             }
             catch (KeyNotFoundException)

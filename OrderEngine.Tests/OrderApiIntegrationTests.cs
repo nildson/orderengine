@@ -64,6 +64,25 @@ public sealed class OrderApiIntegrationTests
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
+    [Fact]
+    public async Task CancelOrder_ShouldCancelPendingOrder_WithoutRequestBody()
+    {
+        await using var factory = new OrderApiFactory();
+        var order = new Order(Guid.NewGuid());
+        order.AddItem("sku-1", "Keyboard", 1, 59.90m);
+        await factory.Repository.AddAsync(order);
+
+        var client = factory.CreateClient();
+        using var request = new HttpRequestMessage(HttpMethod.Patch, $"/api/orders/{order.Id}/cancel");
+
+        var response = await client.SendAsync(request);
+
+        response.EnsureSuccessStatusCode();
+        var returned = await response.Content.ReadFromJsonAsync<OrderDto>();
+        Assert.NotNull(returned);
+        Assert.Equal("Cancelled", returned!.Status);
+    }
+
     private sealed class OrderApiFactory : WebApplicationFactory<Program>
     {
         public InMemoryOrderRepository Repository { get; } = new();

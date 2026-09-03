@@ -316,27 +316,14 @@ Example body:
 }
 ```
 
-### 9.4 Update order status
+### 9.4 Cancel order
 
 ```http
-PATCH /api/orders/{id}/status
+PATCH /api/orders/{id}/cancel
 Authorization: Bearer <token>
-Content-Type: application/json
 ```
 
-Example body:
-
-```json
-{
-  "status": "Confirmed"
-}
-```
-
-Valid values:
-
-- Pending
-- Confirmed
-- Cancelled
+The endpoint has no request body and cancels the order only when its current status is `Pending`.
 
 ## 10. Example requests with curl
 
@@ -364,13 +351,11 @@ curl -X POST "http://localhost:5164/api/orders" `
   -d '{"customerId":"89f8d3ac-b94d-4512-aae9-c17727ccfc60","items":[{"productId":"sku-1","productName":"Keyboard","quantity":2,"unitPrice":59.90}]}'
 ```
 
-### Update status
+### Cancel order
 
 ```powershell
-curl -X PATCH "http://localhost:5164/api/orders/{id}/status" `
+curl -X PATCH "http://localhost:5164/api/orders/{id}/cancel" `
   -H "Authorization: Bearer <token>" `
-  -H "Content-Type: application/json" `
-  -d '{"status":"Confirmed"}'
 ```
 
 ## 11. Domain and business logic

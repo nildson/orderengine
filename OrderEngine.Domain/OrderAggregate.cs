@@ -28,8 +28,8 @@ public sealed class OrderItem
         if (quantity <= 0)
             throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be greater than zero.");
 
-        if (unitPrice <= 0)
-            throw new ArgumentOutOfRangeException(nameof(unitPrice), "Unit price cannot be negative.");
+        if (unitPrice < 1)
+            throw new ArgumentOutOfRangeException(nameof(unitPrice), "Unit price must be at least one.");
 
         ProductId = productId;
         ProductName = productName;
