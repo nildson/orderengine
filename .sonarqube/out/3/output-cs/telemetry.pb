@@ -1,1 +1,0 @@
-KR>C:\projects\orderengine\OrderEngine.Api\OrderEngine.Api.csprojòCSharp14

@@ -13,6 +13,14 @@
 TestResults/
 coverage/
 
+# SonarQube analysis output
+.sonarqube/
+
+# Local SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
 # Logs
 *.log
 

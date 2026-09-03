@@ -1,1 +1,0 @@
-aRTC:\projects\orderengine\OrderEngine.Infrastructure\OrderEngine.Infrastructure.csprojòCSharp14

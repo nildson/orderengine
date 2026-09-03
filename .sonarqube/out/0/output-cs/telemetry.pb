@@ -1,1 +1,0 @@
-QRDC:\projects\orderengine\OrderEngine.Domain\OrderEngine.Domain.csprojòCSharp14

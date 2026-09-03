@@ -1,6 +1,0 @@
-projectKey=ORDERENGINE
-serverUrl=http://localhost:9000
-serverVersion=26.8.0.126808
-dashboardUrl=http://localhost:9000/dashboard?id=ORDERENGINE
-ceTaskId=4ce2ac08-ea90-4fea-90ce-ddca0655e223
-ceTaskUrl=http://localhost:9000/api/ce/task?id=4ce2ac08-ea90-4fea-90ce-ddca0655e223

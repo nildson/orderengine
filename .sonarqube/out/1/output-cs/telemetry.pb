@@ -1,1 +1,0 @@
-[RNC:\projects\orderengine\OrderEngine.Application\OrderEngine.Application.csprojòCSharp14
