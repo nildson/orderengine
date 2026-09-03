@@ -1,6 +1,0 @@
-{
-  "OrderEngine.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\projects\\orderengine\\OrderEngine.Api",
-  "OrderEngine.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\projects\\orderengine\\OrderEngine.Application",
-  "OrderEngine.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\projects\\orderengine\\OrderEngine.Domain",
-  "OrderEngine.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\projects\\orderengine\\OrderEngine.Infrastructure"
-}
