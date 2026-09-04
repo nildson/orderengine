@@ -10,6 +10,7 @@ public enum OrderStatus
 public sealed class OrderItem
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
+    public Guid OrderId { get; private set; }
     public string ProductId { get; private set; }
     public string ProductName { get; private set; }
     public int Quantity { get; private set; }
@@ -17,8 +18,11 @@ public sealed class OrderItem
 
     public decimal Total => Quantity * UnitPrice;
 
-    public OrderItem(string productId, string productName, int quantity, decimal unitPrice)
+    public OrderItem(Guid orderId, string productId, string productName, int quantity, decimal unitPrice)
     {
+        if (orderId == Guid.Empty)
+            throw new ArgumentException("OrderId é obrigatório.", nameof(orderId));
+
         if (string.IsNullOrWhiteSpace(productId))
             throw new ArgumentException("ProductId é obrigatório.", nameof(productId));
 
@@ -31,6 +35,7 @@ public sealed class OrderItem
         if (unitPrice < 1)
             throw new ArgumentOutOfRangeException(nameof(unitPrice), "Preço unitário deve ser maior ou igual a um.");
 
+        OrderId = orderId;
         ProductId = productId;
         ProductName = productName;
         Quantity = quantity;
@@ -59,7 +64,7 @@ public sealed class Order
 
     public void AddItem(string productId, string productName, int quantity, decimal unitPrice)
     {
-        _items.Add(new OrderItem(productId, productName, quantity, unitPrice));
+        _items.Add(new OrderItem(Id, productId, productName, quantity, unitPrice));
     }
 
     public void RemoveItem(Guid itemId)

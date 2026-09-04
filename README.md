@@ -27,6 +27,8 @@ From the business point of view, the application is intentionally small and prag
   - Items
   - Total
 - OrderItem
+  - Id
+  - OrderId
   - ProductId
   - ProductName
   - Quantity
@@ -45,6 +47,10 @@ The order state machine is intentionally controlled by the domain model:
 - Confirmed cannot be cancelled
 - Cancelled cannot be confirmed again
 - Only valid status transitions are accepted
+- An order must contain at least one item
+- Quantity must be greater than zero
+- UnitPrice must be greater than or equal to one
+- Total is calculated in the domain from Quantity * UnitPrice
 
 This ensures that business rules are not scattered throughout the API layer.
 
@@ -240,6 +246,8 @@ using (var scope = app.Services.CreateScope())
 
 This means that when the app starts, it checks the SQLite schema and applies the required migrations automatically, reducing the need for manual setup steps.
 
+The `AddOrderIdToOrderItem` migration promotes the order-item relationship to the explicit `OrderItem.OrderId` property used by the domain and EF Core mapping.
+
 ## 8. Authentication and authorization
 
 ### Login endpoint
@@ -382,6 +390,9 @@ The tests cover:
 - command and query handlers
 - validation behavior
 - status transitions
+- pagination behavior
+- valid and invalid login credentials
+- explicit OrderItem to Order relationships
 - logging behavior
 - integration scenarios via WebApplicationFactory
 
@@ -429,16 +440,16 @@ http://localhost:9000
 Run a standard scanner flow:
 
 ```powershell
-dotnet sonarscanner begin /k:"orderengine" /n:"OrderEngine" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="admin" /d:sonar.password="sqp_0868062e4b5560b1db1ea428d897c3dca61b8ac5"
+$env:SONAR_TOKEN = "sqp_0868062e4b5560b1db1ea428d897c3dca61b8ac5"
+
+dotnet sonarscanner begin /k:"orderengine" /n:"OrderEngine" /d:sonar.host.url="http://localhost:9000" /d:sonar.token="$env:SONAR_TOKEN"
 
 dotnet test OrderEngine.Tests\OrderEngine.Tests.csproj -nologo
 
-dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="sqp_0868062e4b5560b1db1ea428d897c3dca61b8ac5"
-
-Obs: if you need, ask me I'll share with you another Token (in sonar.password)
+dotnet sonarscanner end /d:sonar.token="$env:SONAR_TOKEN"
 ```
 
-> In PowerShell, be careful with literal passwords. When a value should not be interpreted as a variable, use single quotes, for example: `'Order3ngine'`.
+The token above is used for the local SonarQube instance.
 
 ## 15. Troubleshooting
 

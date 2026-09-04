@@ -31,6 +31,7 @@ public sealed class OrderServiceTests
 
         Assert.Equal(customerId, created.CustomerId);
         Assert.Equal(2, created.Items.Count);
+        Assert.All(created.Items, item => Assert.Equal(created.Id, item.OrderId));
         Assert.Equal(OrderStatus.Pending, created.Status);
     }
 
@@ -199,6 +200,30 @@ public sealed class OrderServiceTests
         })));
 
         Assert.Contains("CustomerId", ex.Message);
+    }
+
+    [Fact]
+    public async Task Mediator_ShouldRejectUnitPriceBelowOneViaValidationPipeline()
+    {
+        var services = new ServiceCollection();
+        services.AddLogging();
+        services.AddSingleton<IOrderRepository, InMemoryOrderRepository>();
+        services.AddValidatorsFromAssemblyContaining<CreateOrderCommand>();
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(typeof(CreateOrderCommand).Assembly);
+            cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
+        });
+
+        await using var provider = services.BuildServiceProvider();
+        var mediator = provider.GetRequiredService<ISender>();
+
+        var exception = await Assert.ThrowsAsync<ValidationException>(() => mediator.Send(new CreateOrderCommand(Guid.NewGuid(), new[]
+        {
+            new CreateOrderItemRequest("sku-1", "Keyboard", 1, 0.99m)
+        })));
+
+        Assert.Contains("Preço unitário", exception.Message);
     }
 
     [Fact]

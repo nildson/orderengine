@@ -25,7 +25,7 @@ public sealed class OrderDbContext : DbContext
 
             entity.HasMany(x => x.Items)
                 .WithOne()
-                .HasForeignKey("OrderId")
+                .HasForeignKey(x => x.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
 

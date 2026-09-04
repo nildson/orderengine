@@ -66,8 +66,8 @@ public sealed class CreateOrderCommandValidator : AbstractValidator<CreateOrderC
                     .WithMessage("Quantidade deve ser maior que zero.");
 
                 item.RuleFor(x => x.UnitPrice)
-                    .GreaterThan(0)
-                    .WithMessage("Preço unitário deve ser maior que zero.");
+                    .GreaterThanOrEqualTo(1)
+                    .WithMessage("Preço unitário deve ser maior ou igual a um.");
             });
     }
 }
