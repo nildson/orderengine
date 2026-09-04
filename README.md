@@ -116,7 +116,7 @@ The project was built to satisfy the required technical scope:
 
 ### 3.4 JWT authentication
 
-- login endpoint is available at /api/auth/login
+- login endpoint is available at /auth/login
 - a fixed developer user is validated using environment variables
 - a JWT is returned and used to authorize access to protected order endpoints
 
@@ -245,7 +245,7 @@ This means that when the app starts, it checks the SQLite schema and applies the
 ### Login endpoint
 
 ```http
-POST /api/auth/login
+POST /auth/login
 Content-Type: application/json
 ```
 

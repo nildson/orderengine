@@ -29,6 +29,40 @@ public sealed class OrderApiIntegrationTests
     }
 
     [Fact]
+    public async Task Login_ShouldReturnJwt_WhenCredentialsAreValid()
+    {
+        await using var factory = new OrderApiFactory();
+        var client = factory.CreateClient();
+
+        var response = await client.PostAsJsonAsync("/auth/login", new
+        {
+            email = "dev@martech.com",
+            password = "Senha@123"
+        });
+
+        response.EnsureSuccessStatusCode();
+        var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+
+        Assert.NotNull(result);
+        Assert.False(string.IsNullOrWhiteSpace(result!.Token));
+    }
+
+    [Fact]
+    public async Task Login_ShouldReturnUnauthorized_WhenCredentialsAreInvalid()
+    {
+        await using var factory = new OrderApiFactory();
+        var client = factory.CreateClient();
+
+        var response = await client.PostAsJsonAsync("/auth/login", new
+        {
+            email = "dev@martech.com",
+            password = "wrong-password"
+        });
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
     public async Task GetOrders_ShouldReturnSeededOrders_WhenOrdersExist()
     {
         // Arrange
@@ -149,4 +183,6 @@ public sealed class OrderApiIntegrationTests
         public Guid CustomerId { get; set; }
         public string Status { get; set; } = string.Empty;
     }
+
+    private sealed record LoginResponse(string Token);
 }

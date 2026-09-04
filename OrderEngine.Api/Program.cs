@@ -33,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapPost("/api/auth/login", (LoginRequest request) =>
+app.MapPost("/auth/login", (LoginRequest request) =>
 {
     if (!JwtTokenService.ValidateCredentials(request.Email, request.Password))
     {
