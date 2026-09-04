@@ -20,16 +20,16 @@ public sealed class OrderItem
     public OrderItem(string productId, string productName, int quantity, decimal unitPrice)
     {
         if (string.IsNullOrWhiteSpace(productId))
-            throw new ArgumentException("ProductId is required.", nameof(productId));
+            throw new ArgumentException("ProductId é obrigatório.", nameof(productId));
 
         if (string.IsNullOrWhiteSpace(productName))
-            throw new ArgumentException("ProductName is required.", nameof(productName));
+            throw new ArgumentException("ProductName é obrigatório.", nameof(productName));
 
         if (quantity <= 0)
-            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be greater than zero.");
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantidade deve ser maior que zero.");
 
         if (unitPrice < 1)
-            throw new ArgumentOutOfRangeException(nameof(unitPrice), "Unit price must be at least one.");
+            throw new ArgumentOutOfRangeException(nameof(unitPrice), "Preço unitário deve ser maior ou igual a um.");
 
         ProductId = productId;
         ProductName = productName;
@@ -52,7 +52,7 @@ public sealed class Order
     public Order(Guid customerId)
     {
         if (customerId == Guid.Empty)
-            throw new ArgumentException("CustomerId is required.", nameof(customerId));
+            throw new ArgumentException("CustomerId é obrigatório.", nameof(customerId));
 
         CustomerId = customerId;
     }
@@ -66,7 +66,7 @@ public sealed class Order
     {
         var item = _items.FirstOrDefault(x => x.Id == itemId);
         if (item is null)
-            throw new InvalidOperationException("Item not found in the order.");
+            throw new InvalidOperationException("Item não encontrado no pedido.");
 
         _items.Remove(item);
     }
@@ -74,10 +74,10 @@ public sealed class Order
     public void Confirm()
     {
         if (Status == OrderStatus.Cancelled)
-            throw new InvalidOperationException("It is not possible to confirm a cancelled order.");
+            throw new InvalidOperationException("Não é possível confirmar um pedido cancelado.");
 
         if (Status != OrderStatus.Pending)
-            throw new InvalidOperationException("Only pending orders can be confirmed.");
+            throw new InvalidOperationException("Somente pedidos pendentes podem ser confirmados.");
 
         Status = OrderStatus.Confirmed;
     }
@@ -85,10 +85,10 @@ public sealed class Order
     public void Cancel()
     {
         if (Status == OrderStatus.Confirmed)
-            throw new InvalidOperationException("It is not possible to cancel a confirmed order.");
+            throw new InvalidOperationException("Não é possível cancelar um pedido confirmado.");
 
         if (Status == OrderStatus.Cancelled)
-            throw new InvalidOperationException("This order is already cancelled.");
+            throw new InvalidOperationException("Este pedido já está cancelado.");
 
         Status = OrderStatus.Cancelled;
     }
@@ -99,7 +99,7 @@ public sealed class Order
         {
             case OrderStatus.Pending:
                 if (Status != OrderStatus.Pending)
-                    throw new InvalidOperationException("Only pending orders can be set back to pending.");
+                    throw new InvalidOperationException("Somente pedidos pendentes podem voltar ao status pendente.");
                 return;
             case OrderStatus.Confirmed:
                 Confirm();
@@ -108,7 +108,7 @@ public sealed class Order
                 Cancel();
                 return;
             default:
-                throw new ArgumentOutOfRangeException(nameof(status), status, "Unsupported order status.");
+                throw new ArgumentOutOfRangeException(nameof(status), status, "Status de pedido não suportado.");
         }
     }
 }

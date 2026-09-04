@@ -8,9 +8,12 @@ public static class OrderEndpoints
 {
     public static WebApplication MapOrderEndpoints(this WebApplication app)
     {
-        app.MapGet("/api/orders", async (ISender mediator) =>
+        app.MapGet("/api/orders", async (ISender mediator, int page = 1, int pageSize = 10) =>
         {
-            var orders = await mediator.Send(new GetOrdersQuery());
+            if (page < 1 || pageSize < 1 || pageSize > 100)
+                return Results.BadRequest(new { message = "Page must be greater than zero and pageSize must be between 1 and 100." });
+
+            var orders = await mediator.Send(new GetOrdersQuery(page, pageSize));
             return Results.Ok(orders);
         }).RequireAuthorization();
 

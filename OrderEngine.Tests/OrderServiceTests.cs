@@ -123,6 +123,26 @@ public sealed class OrderServiceTests
     }
 
     [Fact]
+    public async Task GetOrdersQueryHandler_ShouldReturnRequestedPage()
+    {
+        var repository = new InMemoryOrderRepository();
+        var createHandler = new CreateOrderCommandHandler(repository);
+        var queryHandler = new GetOrdersQueryHandler(repository);
+
+        for (var index = 0; index < 3; index++)
+        {
+            await createHandler.Handle(new CreateOrderCommand(Guid.NewGuid(), new[]
+            {
+                new CreateOrderItemRequest($"sku-{index}", "Product", 1, 10m)
+            }), CancellationToken.None);
+        }
+
+        var orders = await queryHandler.Handle(new GetOrdersQuery(2, 1), CancellationToken.None);
+
+        Assert.Single(orders);
+    }
+
+    [Fact]
     public async Task UpdateOrderStatusCommandHandler_ShouldUpdateStatus()
     {
         var repository = new InMemoryOrderRepository();

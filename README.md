@@ -281,9 +281,11 @@ All order routes require authentication.
 ### 9.1 Get all orders
 
 ```http
-GET /api/orders
+GET /api/orders?page=1&pageSize=10
 Authorization: Bearer <token>
 ```
+
+The `page` parameter starts at 1. `pageSize` defaults to 10 and accepts values from 1 to 100.
 
 ### 9.2 Get order by id
 
@@ -330,7 +332,7 @@ The endpoint has no request body and cancels the order only when its current sta
 ### Login
 
 ```powershell
-curl -X POST "http://localhost:5164/api/auth/login" `
+curl -X POST "http://localhost:5164/auth/login" `
   -H "Content-Type: application/json" `
   -d '{"email":"dev@martech.com","password":"Senha@123"}'
 ```

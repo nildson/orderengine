@@ -11,7 +11,7 @@ public record CreateOrderCommand(Guid CustomerId, IEnumerable<CreateOrderItemReq
 
 public record GetOrderByIdQuery(Guid Id) : IRequest<Order?>;
 
-public record GetOrdersQuery : IRequest<IReadOnlyCollection<Order>>;
+public record GetOrdersQuery(int Page = 1, int PageSize = 10) : IRequest<IReadOnlyCollection<Order>>;
 
 public record UpdateOrderStatusCommand(Guid Id, OrderStatus Status) : IRequest<Order>;
 
@@ -19,7 +19,7 @@ public interface IOrderRepository
 {
     Task<Order> AddAsync(Order order, CancellationToken cancellationToken = default);
     Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-    Task<IReadOnlyCollection<Order>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<IReadOnlyCollection<Order>> GetAllAsync(int page = 1, int pageSize = 10, CancellationToken cancellationToken = default);
     Task UpdateAsync(Order order, CancellationToken cancellationToken = default);
 }
 
@@ -27,7 +27,7 @@ public interface IOrderService
 {
     Task<Order> CreateAsync(CreateOrderRequest request, CancellationToken cancellationToken = default);
     Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-    Task<IReadOnlyCollection<Order>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<IReadOnlyCollection<Order>> GetAllAsync(int page = 1, int pageSize = 10, CancellationToken cancellationToken = default);
     Task<Order> UpdateStatusAsync(Guid id, OrderStatus status, CancellationToken cancellationToken = default);
 }
 
@@ -83,7 +83,7 @@ public sealed class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, IRea
     }
 
     public Task<IReadOnlyCollection<Order>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
-        => _orderRepository.GetAllAsync(cancellationToken);
+        => _orderRepository.GetAllAsync(request.Page, request.PageSize, cancellationToken);
 }
 
 public sealed class UpdateOrderStatusCommandHandler : IRequestHandler<UpdateOrderStatusCommand, Order>
@@ -122,8 +122,8 @@ public sealed class OrderService : IOrderService
     public Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         => new GetOrderByIdQueryHandler(_orderRepository).Handle(new GetOrderByIdQuery(id), cancellationToken);
 
-    public Task<IReadOnlyCollection<Order>> GetAllAsync(CancellationToken cancellationToken = default)
-        => new GetOrdersQueryHandler(_orderRepository).Handle(new GetOrdersQuery(), cancellationToken);
+    public Task<IReadOnlyCollection<Order>> GetAllAsync(int page = 1, int pageSize = 10, CancellationToken cancellationToken = default)
+        => new GetOrdersQueryHandler(_orderRepository).Handle(new GetOrdersQuery(page, pageSize), cancellationToken);
 
     public Task<Order> UpdateStatusAsync(Guid id, OrderStatus status, CancellationToken cancellationToken = default)
         => new UpdateOrderStatusCommandHandler(_orderRepository).Handle(new UpdateOrderStatusCommand(id, status), cancellationToken);

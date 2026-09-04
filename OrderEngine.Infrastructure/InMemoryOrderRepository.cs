@@ -20,10 +20,17 @@ public sealed class InMemoryOrderRepository : IOrderRepository
         return Task.FromResult(_orders.TryGetValue(id, out var order) ? order : null);
     }
 
-    public Task<IReadOnlyCollection<Order>> GetAllAsync(CancellationToken cancellationToken = default)
+    public Task<IReadOnlyCollection<Order>> GetAllAsync(int page = 1, int pageSize = 10, CancellationToken cancellationToken = default)
     {
         cancellationToken.ThrowIfCancellationRequested();
-        return Task.FromResult<IReadOnlyCollection<Order>>(_orders.Values.ToList());
+        var orders = _orders.Values
+            .OrderBy(order => order.CreatedAt)
+            .ThenBy(order => order.Id)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        return Task.FromResult<IReadOnlyCollection<Order>>(orders);
     }
 
     public Task UpdateAsync(Order order, CancellationToken cancellationToken = default)

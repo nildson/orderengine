@@ -27,11 +27,15 @@ public sealed class EfCoreOrderRepository : IOrderRepository
             .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
 
-    public async Task<IReadOnlyCollection<Order>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyCollection<Order>> GetAllAsync(int page = 1, int pageSize = 10, CancellationToken cancellationToken = default)
     {
         return await _context.Orders
             .Include(x => x.Items)
             .AsNoTracking()
+            .OrderBy(x => x.CreatedAt)
+            .ThenBy(x => x.Id)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
             .ToListAsync(cancellationToken);
     }
 

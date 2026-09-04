@@ -40,34 +40,34 @@ public sealed class CreateOrderCommandValidator : AbstractValidator<CreateOrderC
     {
         RuleFor(x => x.CustomerId)
             .NotEmpty()
-            .WithMessage("CustomerId is required.");
+            .WithMessage("Cliente é obrigatório.");
 
         RuleFor(x => x.Items)
             .NotNull()
-            .WithMessage("Items are required.");
+            .WithMessage("Itens são obrigatórios.");
 
         RuleFor(x => x.Items)
             .Must(items => items is not null && items.Any())
-            .WithMessage("An order must contain at least one item.");
+            .WithMessage("Um pedido deve ter pelo menos 1 item.");
 
         RuleForEach(x => x.Items)
             .ChildRules(item =>
             {
                 item.RuleFor(x => x.ProductId)
                     .NotEmpty()
-                    .WithMessage("ProductId is required.");
+                    .WithMessage("Produto é obrigatório.");
 
                 item.RuleFor(x => x.ProductName)
                     .NotEmpty()
-                    .WithMessage("ProductName is required.");
+                    .WithMessage("Nome do produto é obrigatório.");
 
                 item.RuleFor(x => x.Quantity)
                     .GreaterThan(0)
-                    .WithMessage("Quantity must be greater than zero.");
+                    .WithMessage("Quantidade deve ser maior que zero.");
 
                 item.RuleFor(x => x.UnitPrice)
-                    .GreaterThanOrEqualTo(0)
-                    .WithMessage("Unit price cannot be negative.");
+                    .GreaterThan(0)
+                    .WithMessage("Preço unitário deve ser maior que zero.");
             });
     }
 }
@@ -78,10 +78,10 @@ public sealed class UpdateOrderStatusCommandValidator : AbstractValidator<Update
     {
         RuleFor(x => x.Id)
             .NotEmpty()
-            .WithMessage("OrderId is required.");
+            .WithMessage("O código do pedido é obrigatório.");
 
         RuleFor(x => x.Status)
             .IsInEnum()
-            .WithMessage("Status must be a valid order status.");
+            .WithMessage("O status deve ser um status de pedido válido.");
     }
 }
